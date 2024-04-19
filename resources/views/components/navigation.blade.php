@@ -3,7 +3,7 @@
         <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
                 <div class="flex-shrink-0">
-                    <img class="h-8 w-8" src="https://scontent.fbkk22-2.fna.fbcdn.net/v/t39.30808-6/302248147_380329044303101_1207395636994414783_n.png?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=RA3LFIce3SkAb5nxqhT&_nc_ht=scontent.fbkk22-2.fna&oh=00_AfDAVnPgxVjQGpD2z33FkumLnopdk9bRit3NHiyjpeFBlA&oe=6626710E" alt="Arithmos">
+                    <img class="h-14 w-14 rounded-full" src="https://scontent.fbkk22-2.fna.fbcdn.net/v/t39.30808-6/302248147_380329044303101_1207395636994414783_n.png?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=RA3LFIce3SkAb5nxqhT&_nc_ht=scontent.fbkk22-2.fna&oh=00_AfDAVnPgxVjQGpD2z33FkumLnopdk9bRit3NHiyjpeFBlA&oe=6626710E" alt="Arithmos">
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
@@ -31,7 +31,7 @@
                             <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                 <span class="absolute -inset-1.5"></span>
                                 <span class="sr-only">Open user menu</span>
-                                <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                                <img class="h-14 w-14 rounded-full" src="https://imgs.search.brave.com/3IZGA5thlqA-3TfyK3jHjeecVsgYNGcLlb3Ee0EfaW4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2F5bWVkaWEt/Y29udGVudC5jb20v/LmltYWdlL2NfbGlt/aXQsY3Nfc3JnYixm/bF9wcm9ncmVzc2l2/ZSxxX2F1dG86ZWNv/LHdfNzAwL01UYzFN/alk0TlRVek1qTTNO/alk1TWpRMi90b3At/MzAtZnVubnktZWlu/c3RlaW4tam9rZXMt/MTUtZWluc3RlaW4t/am9rZXMtYWJvdXQt/cmVsYXRpdml0eS1h/YnNlbnQtbWluZGVk/LWxlY3R1cmVyLWFu/ZC1jb25mdXNpbmct/am9rZXMuanBn" alt="">
                             </button>
                         </div>
 
@@ -85,7 +85,7 @@
         <div class="border-t border-gray-700 pb-3 pt-4">
             <div class="flex items-center px-5">
                 <div class="flex-shrink-0">
-                    <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                    <img class="h-10 w-10 rounded-full" src="https://imgs.search.brave.com/3IZGA5thlqA-3TfyK3jHjeecVsgYNGcLlb3Ee0EfaW4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2F5bWVkaWEt/Y29udGVudC5jb20v/LmltYWdlL2NfbGlt/aXQsY3Nfc3JnYixm/bF9wcm9ncmVzc2l2/ZSxxX2F1dG86ZWNv/LHdfNzAwL01UYzFN/alk0TlRVek1qTTNO/alk1TWpRMi90b3At/MzAtZnVubnktZWlu/c3RlaW4tam9rZXMt/MTUtZWluc3RlaW4t/am9rZXMtYWJvdXQt/cmVsYXRpdml0eS1h/YnNlbnQtbWluZGVk/LWxlY3R1cmVyLWFu/ZC1jb25mdXNpbmct/am9rZXMuanBn" alt="">
                 </div>
                 <div class="ml-3">
                     <div class="text-base font-medium leading-none text-white">Tom Cook</div>

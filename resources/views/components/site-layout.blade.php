@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{$title}} | HS Demo</title>
+    <title>{{$title}}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -13,6 +13,9 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/css/hsdemo.css"/>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
 
     <!-- Scripts -->
     <script src="//unpkg.com/alpinejs" defer></script>
@@ -23,11 +26,7 @@
 
     <x-navigation/>
 
-    <header class="bg-white shadow">
-        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{$title}}</h1>
-        </div>
-    </header>
+    
 
     <main>
         <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">

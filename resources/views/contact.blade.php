@@ -1,7 +1,7 @@
 <x-site-layout title='Contact Me'>
     <div class="flex">
         
-        <div class="w-1/2 p-4">
+        <div class="text-white w-1/2 p-4">
             <h2 class="text-4xl font-bold">Giorgi Kurtanidze</h2>
             <p class="mt-4"><strong>Phone(Geo):</strong> (+995) 597-73-08-89</p>
             <p class="mt-4"><strong>Phone(Geo):</strong> (+66) 083-167-5025</p>

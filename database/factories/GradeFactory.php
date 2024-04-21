@@ -17,8 +17,9 @@ class GradeFactory extends Factory
     public function definition(): array
     {
         return [
-            // name should be a word like 2th grade, 3th grade,4th grade,5th grade,6th grade,7th grade,8th grade,9th grade,10th grade,11th grade
-            'grade' => $this->faker->word() . 'th grade',
+            // generate fake data for grade from 2 to 11
+            'grade' => $this->faker->numberBetween(2, 11),
+
     
         ];
     }

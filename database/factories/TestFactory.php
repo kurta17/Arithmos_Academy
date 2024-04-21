@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Grade;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Test>
@@ -18,6 +19,7 @@ class TestFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(),
+            //'grade_id' => Grade::factory()->create()->id,
             'options' => json_encode($this->faker->words(4)),
             'answer' => $this->faker->word(),
         ];

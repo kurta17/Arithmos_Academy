@@ -7,9 +7,10 @@
             <p class="mt-4"><strong>Phone(Geo):</strong> (+66) 083-167-5025</p>
             <p class="mt-4"><strong>Email:</strong> thinkers.struggle@gmail.com</p>
             <p class="mt-4"><strong>Facebook:</strong> <a href="https://www.facebook.com/gio.kurtanidze.357">Gio Kurtanidze</a></p>
-            <p class="mt-4"><strong>University:</strong> Harbour Space In Bangkok</p>
+            <p class="mt-4"><strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/giorgi-kurtanidze-2b235b287/">Giorgi Kurtanidze</a></p>
+            <p class="mt-4"><strong>University:</strong><a href="https://harbour.space/"> Harbour Space In Bangkok</p>
             <p class="mt-4"><strong>Major:</strong> Computer Science</p>
-            <p class="mt-4"><strong>School:</strong> Komarovi school In Georgia</p>
+            <p class="mt-4"><strong>School:</strong><a href="https://komarovi.edu.ge/en"> Komarovi school In Georgia</p>
             <p class="mt-4"><strong>Location:</strong> Bangkok</p>
         </div>
 

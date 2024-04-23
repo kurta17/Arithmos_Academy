@@ -20,8 +20,12 @@ class TestFactory extends Factory
         return [
             'title' => $this->faker->sentence(),
             //'grade_id' => Grade::factory()->create()->id,
-            'options' => json_encode($this->faker->words(4)),
+            'options a' => $this->faker->word(),
+            'options b' => $this->faker->word(),
+            'options c' => $this->faker->word(),
+            'options d' => $this->faker->word(),
             'answer' => $this->faker->word(),
+            'grade_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

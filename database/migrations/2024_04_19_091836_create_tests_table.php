@@ -14,9 +14,12 @@ return new class extends Migration
         Schema::create('tests', function (Blueprint $table) {
             $table->id();
             //grade_id is a foreign key that references the id column on the grades table from 2 to 11
-            //$table->foreignId('grade_id')->constrained();
+            $table->foreignId('grade_id');
             $table->string('title');
-            $table->text('options');
+            $table->text('options a');
+            $table->text('options b');
+            $table->text('options c');
+            $table->text('options d');
             $table->string('answer');
             $table->timestamps();
         });

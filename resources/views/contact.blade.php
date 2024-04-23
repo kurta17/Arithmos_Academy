@@ -14,9 +14,10 @@
             <p class="mt-4"><strong>Location:</strong> Bangkok</p>
         </div>
 
-        <div class="w-1/3 p-4 flex justify-center items-center">
-            <img src="https://scontent.fbkk22-3.fna.fbcdn.net/v/t39.30808-6/263808384_1035484123680515_8192444120921128005_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=eA80bEBTKL4Ab5B0L1b&_nc_ht=scontent.fbkk22-3.fna&oh=00_AfAvwTz48SwXzYUn1Csp0NzEuFBBpgsUWTqYgCVRQmKqDQ&oe=66282DF2" alt="Giorgi" class="w-full h-auto">
+        <div class="absolute w-1/3  p-6 right-20 container">
+            <img src="https://scontent.fbkk22-3.fna.fbcdn.net/v/t39.30808-6/263808384_1035484123680515_8192444120921128005_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=eA80bEBTKL4Ab5B0L1b&_nc_ht=scontent.fbkk22-3.fna&oh=00_AfAvwTz48SwXzYUn1Csp0NzEuFBBpgsUWTqYgCVRQmKqDQ&oe=66282DF2" alt="Giorgi">
         </div>
+
         
     </div>
 </x-site-layout>

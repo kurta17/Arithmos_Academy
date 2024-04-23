@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
-            $table->unsignedTinyInteger('grade_value');
+            $table->integer('grade');
+            $table->timestamps();
         });
     }
 

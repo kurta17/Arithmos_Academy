@@ -12,10 +12,11 @@ class TestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $tests = Test::all();
-        return view('tests.index', compact('tests'));
+        $grade = $request->input('grade'); // Get grade from URL
+        $tests = Test::where('grade_id',$grade)->get();
+        return view('question', compact('tests'));
     }
 
     /**

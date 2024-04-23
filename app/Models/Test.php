@@ -10,15 +10,21 @@ class Test extends Model
     use HasFactory;
 
     protected $fillable = ['title', 'grade_id', 'options_a', 'options_b', 'options_c', 'options_d', 'answer'];
-    protected $casts = [
-        'options_a' => 'array',
-        'options_b' => 'array',
-        'options_c' => 'array',
-        'options_d' => 'array',
-    ];
+    
 
     public function grade()
     {
         return $this->belongsTo(Grade::class);
     }
+
+    public function options()
+    {
+        return [
+            'a' => $this->options_a,
+            'b' => $this->options_b,
+            'c' => $this->options_c,
+            'd' => $this->options_d,
+        ];
+    }
 }
+ 

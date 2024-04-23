@@ -17,7 +17,7 @@ class GradeFactory extends Factory
     public function definition(): array
     {
         return [
-            // generate fake data for grade from 2 to 11
+            // generate fake data for grade from 2 to 10
             'grade' => $this->faker->numberBetween(2, 10),
 
     

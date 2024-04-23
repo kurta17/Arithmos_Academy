@@ -8,7 +8,10 @@ use App\Http\Controllers\TestController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('grades', GradeController::class);
+Route::resource('grade', GradeController::class);
+Route::get('/test', [GradeController::class, 'index'])->name('grades.index');
+Route::get('/question', [TestController::class, 'index'])->name('question.index');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -20,17 +23,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('test', TestController::class);
 
 Route::get('contact', function () {
     return view('contact');
 });
-
-Route::get('test', function () {
-    return view('test');
-    // connect the test to grade like \test\2 means grade 2 page which is a question.blade.php
-
-});
-
 
 require __DIR__.'/auth.php';

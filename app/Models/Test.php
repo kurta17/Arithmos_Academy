@@ -9,9 +9,12 @@ class Test extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title','grade', 'options a','options a','options a','options a', 'answer'];
+    protected $fillable = ['title', 'grade_id', 'options_a', 'options_b', 'options_c', 'options_d', 'answer'];
     protected $casts = [
-        'options' => 'array',
+        'options_a' => 'array',
+        'options_b' => 'array',
+        'options_c' => 'array',
+        'options_d' => 'array',
     ];
 
     public function grade()

@@ -18,7 +18,7 @@ class GradeFactory extends Factory
     {
         return [
             // generate fake data for grade from 2 to 11
-            'grade' => $this->faker->numberBetween(2, 11),
+            'grade' => $this->faker->numberBetween(2, 10),
 
     
         ];

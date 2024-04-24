@@ -14,7 +14,7 @@ class TestController extends Controller
      */
     public function index(Request $request)
     {
-        $grade = $request->input('grade'); // Get grade from URL
+        $grade = $request->input('grade');
         $tests = Test::where('grade_id',$grade)->get();
         return view('question', compact('tests'));
     }

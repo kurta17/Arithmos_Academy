@@ -3,7 +3,7 @@
         <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
                 <div class="flex-shrink-0">
-                    <img class="h-14 w-14 rounded-full" src="https://scontent.fbkk22-2.fna.fbcdn.net/v/t39.30808-6/302248147_380329044303101_1207395636994414783_n.png?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=RA3LFIce3SkAb5nxqhT&_nc_ht=scontent.fbkk22-2.fna&oh=00_AfDAVnPgxVjQGpD2z33FkumLnopdk9bRit3NHiyjpeFBlA&oe=6626710E" alt="Arithmos">
+                    <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
@@ -16,13 +16,26 @@
             </div>
             <div class="hidden md:block">
                 <div class="ml-4 flex items-center md:ml-6">
-                    <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">View notifications</span>
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                        </svg>
-                    </button>
+                    <div class="text-white flex flex-row justify-center gap-4">
+                        @auth
+                            <span class="py-1">{{ auth()->user()->name }}</span>
+
+                            <a href="{{ route('dashboard') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Dashboard</a>
+
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <button  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Logout</button>
+                            </form>
+
+                        @endauth
+
+                        @guest
+                            <a href="{{ route('login') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a>
+                            <a href="{{ route('register') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Register</a>
+                        @endguest
+
+
+                    </div>
 
                     {{--
                     <!-- Profile dropdown -->
@@ -31,7 +44,7 @@
                             <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                 <span class="absolute -inset-1.5"></span>
                                 <span class="sr-only">Open user menu</span>
-                                <img class="h-14 w-14 rounded-full" src="https://imgs.search.brave.com/3IZGA5thlqA-3TfyK3jHjeecVsgYNGcLlb3Ee0EfaW4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2F5bWVkaWEt/Y29udGVudC5jb20v/LmltYWdlL2NfbGlt/aXQsY3Nfc3JnYixm/bF9wcm9ncmVzc2l2/ZSxxX2F1dG86ZWNv/LHdfNzAwL01UYzFN/alk0TlRVek1qTTNO/alk1TWpRMi90b3At/MzAtZnVubnktZWlu/c3RlaW4tam9rZXMt/MTUtZWluc3RlaW4t/am9rZXMtYWJvdXQt/cmVsYXRpdml0eS1h/YnNlbnQtbWluZGVk/LWxlY3R1cmVyLWFu/ZC1jb25mdXNpbmct/am9rZXMuanBn" alt="">
+                                <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                             </button>
                         </div>
 
@@ -85,7 +98,7 @@
         <div class="border-t border-gray-700 pb-3 pt-4">
             <div class="flex items-center px-5">
                 <div class="flex-shrink-0">
-                    <img class="h-10 w-10 rounded-full" src="https://imgs.search.brave.com/3IZGA5thlqA-3TfyK3jHjeecVsgYNGcLlb3Ee0EfaW4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2F5bWVkaWEt/Y29udGVudC5jb20v/LmltYWdlL2NfbGlt/aXQsY3Nfc3JnYixm/bF9wcm9ncmVzc2l2/ZSxxX2F1dG86ZWNv/LHdfNzAwL01UYzFN/alk0TlRVek1qTTNO/alk1TWpRMi90b3At/MzAtZnVubnktZWlu/c3RlaW4tam9rZXMt/MTUtZWluc3RlaW4t/am9rZXMtYWJvdXQt/cmVsYXRpdml0eS1h/YnNlbnQtbWluZGVk/LWxlY3R1cmVyLWFu/ZC1jb25mdXNpbmct/am9rZXMuanBn" alt="">
+                    <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                 </div>
                 <div class="ml-3">
                     <div class="text-base font-medium leading-none text-white">Tom Cook</div>

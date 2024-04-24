@@ -12,11 +12,16 @@ class TestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index(Request $request)
     {
         $grade = $request->input('grade');
         $tests = Test::where('grade_id',$grade)->get();
-        return view('question', compact('tests'));
+        //give me the question by number_id
+        $test = Test::find('number_id');
+        return view('question', compact('tests','test'));
+        
+        
     }
 
     /**
@@ -62,6 +67,7 @@ class TestController extends Controller
     public function show($id)
     {
         $test = Test::findOrFail($id);
+
         return view('tests.show', compact('test'));
     }
 

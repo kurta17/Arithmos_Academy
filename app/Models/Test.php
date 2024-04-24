@@ -9,7 +9,7 @@ class Test extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'grade_id', 'options_a', 'options_b', 'options_c', 'options_d', 'answer'];
+    protected $fillable = ['title', 'grade_id','number_id', 'options_a', 'options_b', 'options_c', 'options_d', 'answer'];
     
 
     public function grade()

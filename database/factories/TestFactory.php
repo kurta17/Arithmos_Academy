@@ -19,7 +19,7 @@ class TestFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(),
-            //'grade_id' => Grade::factory()->create()->id,
+            'number_id' => $this->faker->numberBetween(1, 10),
             'options_a' => $this->faker->word(),
             'options_b' => $this->faker->word(),
             'options_c' => $this->faker->word(),

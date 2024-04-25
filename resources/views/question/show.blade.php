@@ -1,4 +1,4 @@
-<x-site-layout title='Questions'>
+<x-site-layout title="Questions">
     <form method="POST" action="{{ route('submit') }}">
         @csrf
 
@@ -10,7 +10,7 @@
             <p class="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-5 ">Time: <span id="time">00:00</span></p>
         </div>
 
-        <div class='text-white'>
+        <div class="text-white">
             <h2 class="text-5xl font-bold text-white text-center mt-10">
                 {{ $test->title }}
             </h2>
@@ -24,10 +24,9 @@
                 @endforeach
             </div>
         </div>
-        
 
         <input type="hidden" name="question_id" value="{{ $test->number_id }}">
-        <input type="hidden" name="next_question_id" value="3">
+        <input type="hidden" name="next_question_id" value="{{ $nextQuestionId }}">
 
         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5">Submit</button>
 

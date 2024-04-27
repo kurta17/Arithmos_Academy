@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('tests', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('grade_id')->constrained('grades');
-            $table->foreignId('number_id');
-            $table->string('title');
+            $table->integer('grade');
+            $table->integer('question_number');
+            $table->string('question');
             $table->text('options_a');
             $table->text('options_b');
             $table->text('options_c');

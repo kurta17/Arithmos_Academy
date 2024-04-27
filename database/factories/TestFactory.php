@@ -18,14 +18,15 @@ class TestFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(),
-            'number_id' => $this->faker->numberBetween(1, 10),
+            'grade' => $this->faker->numberBetween(2, 10),
+            'question_number' => $this->faker->numberBetween(1, 10),
+            'question' => $this->faker->sentence(),
             'options_a' => $this->faker->word(),
             'options_b' => $this->faker->word(),
             'options_c' => $this->faker->word(),
             'options_d' => $this->faker->word(),
             'answer' => $this->faker->word(),
-            'grade_id' => $this->faker->numberBetween(2, 10),
+            
         ];
     }
 }

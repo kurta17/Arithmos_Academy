@@ -9,13 +9,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('grade', GradeController::class);
-Route::get('/question', [TestController::class, 'index'])->name('question.index');
+
 Route::post('/question/submit', [TestController::class, 'submit'])->name('submit');
 Route::get('/update/{id}', [TestController::class, 'update'])->name('update'); // Corrected route definition
 
-Route::get('/test', [GradeController::class, 'index'])->name('grades.index');
-Route::get('/question/{grade_id}/{number_id}', [TestController::class, 'show'])->name('question.show');
+Route::get('/test', [TestController::class, 'index'])->name('test');
+
+// Route::get('/question/{grade_id}/{number_id}', [TestController::class, 'show'])->name('question.show');
 
 
 Route::get('/dashboard', function () {

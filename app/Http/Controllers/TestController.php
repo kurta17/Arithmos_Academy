@@ -45,12 +45,7 @@ class TestController extends Controller
         // Validation rules
         $rules = [
             'question' => 'required',
-            'grade_id' => 'required|exists:grades,id',
-            'options_a' => 'required|array',
-            'options_b' => 'required|array',
-            'options_c' => 'required|array',
-            'options_d' => 'required|array',
-            'answer' => 'required|in:a,b,c,d',
+            'description' => 'required',
         ];
 
         // Validate the request
@@ -63,6 +58,8 @@ class TestController extends Controller
         return redirect()->route('test')
             ->with('success', 'Test created successfully.');
     }
+
+    
     /**
      * Display the specified resource.
      *

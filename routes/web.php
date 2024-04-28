@@ -25,7 +25,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
 });
+
+Route::post('/submit', [TestController::class, 'store'])->name('submit');
+
+
+// Route to show the question creation form
+Route::get('/question/create', [TestController::class, 'create'])->name('question.create');
+
+// Route to handle the submission of the question creation form
+//Route::post('/questions', [TestController::class, 'store'])->name('questions.store');
 
 // Route to display the contact page
 Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');

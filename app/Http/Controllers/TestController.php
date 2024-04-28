@@ -31,7 +31,7 @@ class TestController extends Controller
      */
     public function create()
     {
-        return view('tests.create');
+        return view('question.create');
     }
 
     /**
@@ -42,7 +42,8 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        // Validation rules
+        $rules = [
             'question' => 'required',
             'grade_id' => 'required|exists:grades,id',
             'options_a' => 'required|array',
@@ -50,14 +51,18 @@ class TestController extends Controller
             'options_c' => 'required|array',
             'options_d' => 'required|array',
             'answer' => 'required|in:a,b,c,d',
-        ]);
+        ];
 
-        Test::create($request->all());
+        // Validate the request
+        $validatedData = $request->validate($rules);
 
-        return redirect()->route('tests.index')
+        // Create a new test
+        Test::create($validatedData);
+
+        // Redirect with success message
+        return redirect()->route('test')
             ->with('success', 'Test created successfully.');
     }
-
     /**
      * Display the specified resource.
      *
@@ -103,8 +108,11 @@ class TestController extends Controller
      */
     public function edit($id)
     {
+        // Find the test by ID
         $test = Test::findOrFail($id);
-        return view('tests.edit', compact('test'));
+        
+        // Return the edit view with test data
+        return view('question.edit', compact('test'));
     }
 
         

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GradeController;
@@ -10,8 +11,6 @@ Route::get('/', function () {
 });
 
 
-Route::post('/question/submit', [TestController::class, 'submit'])->name('submit');
-Route::get('/update/{id}', [TestController::class, 'update'])->name('update'); // Corrected route definition
 
 Route::get('/test', [TestController::class, 'index'])->name('test');
 
@@ -28,8 +27,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('contact', function () {
-    return view('contact');
-});
+// Route to display the contact page
+Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
+
+// Route to handle form submission
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
 require __DIR__.'/auth.php';

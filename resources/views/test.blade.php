@@ -1,10 +1,18 @@
 <x-site-layout title='Arithmos Academy'>
-    <!-- Your existing code -->
-    <div class="grid grid-cols-2 gap-10 md:grid-cols-3 items-center h-full mt-10">
-        @for($i = 2; $i <= 10; $i++)
-            <a href="{{ route('test', ['grade' => $i, 'question_number' => 1,]) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Grade {{$i}}
-            </a>
-        @endfor
+  <div class="flex flex-col  bg-gray-900">
+    <div class="text-center mb-11">
+      <h1 class="text-5xl font-bold text-gray-100">Choose Your Grade</h1>
     </div>
+    <div class="container mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+        @for($i = 2; $i <= 10; $i++)
+          <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow hover:shadow-lg transition-all">
+            <a href="{{ route('test', ['grade' => $i, 'question_number' => 1]) }}" class="text-lg font-bold text-blue-500 hover:text-blue-700 transition-colors">
+              Grade {{$i}}
+            </a>
+          </div>
+        @endfor
+      </div>
+    </div>
+  </div>
 </x-site-layout>

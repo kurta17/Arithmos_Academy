@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GradeController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\QuestionController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,11 +30,11 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/submit', [TestController::class, 'store'])->name('submit');
-Route::post('/questions', [QuestionController::class, 'store'])->name('question.store');
 
+Route::post('/questions/store', [QuestionController::class, 'store'])->name('question.store');
 
 // Route to show the question creation form
-Route::get('/question/create', [TestController::class, 'create'])->name('question.create');
+Route::get('/question/create', [QuestionController::class, 'create'])->name('question.create');
 
 // Route to handle the submission of the question creation form
 //Route::post('/questions', [TestController::class, 'store'])->name('questions.store');

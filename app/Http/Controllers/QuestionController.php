@@ -20,12 +20,16 @@ class QuestionController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
         ]);
-
-        // Create a new question
-        Question::create($validatedData);
-
+    
+        // Get the authenticated user
+        $user = auth()->user();
+    
+        // Create a new question associated with the authenticated user
+        $user->questions()->create($validatedData);
+    
         // Redirect with success message
         return redirect()->route('question.create')
             ->with('success', 'Question created successfully.');
     }
+    
 }

@@ -4,20 +4,7 @@
     <div class="flex justify-center items-center h-full">
         <div class="w-1/2 p-4 text-white">
             <h2 class="text-4xl font-bold text-center">Create a New Question</h2>
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-            @if(session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
+
             <form method="POST" action="{{ route('question.store') }}">
                 @csrf
                 <div class="mb-6">
@@ -30,6 +17,21 @@
                 </div>
                 <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
             </form>
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            @if(session('success'))
+                <div class="w-1/2 alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
         </div>
     </div>
 </x-site-layout>

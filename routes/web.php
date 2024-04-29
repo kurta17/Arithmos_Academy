@@ -29,6 +29,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/submit', [TestController::class, 'store'])->name('submit');
+Route::post('/questions', [QuestionController::class, 'store'])->name('question.store');
 
 
 // Route to show the question creation form

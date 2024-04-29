@@ -24,41 +24,6 @@ class TestController extends Controller
        
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('question.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        // Validation rules
-        $rules = [
-            'question' => 'required',
-            'description' => 'required',
-        ];
-
-        // Validate the request
-        $validatedData = $request->validate($rules);
-
-        // Create a new test
-        Test::create($validatedData);
-
-        // Redirect with success message
-        return redirect()->route('test')
-            ->with('success', 'Test created successfully.');
-    }
-
     
     /**
      * Display the specified resource.

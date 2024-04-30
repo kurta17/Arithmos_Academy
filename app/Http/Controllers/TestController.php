@@ -33,6 +33,7 @@ class TestController extends Controller
      */
     public function show($grade, $question_number)
     { 
+        
         $grade = (int) $grade;
         $question_number = (int) $question_number;
         $currentQuestion = Test::where('grade', $grade)
@@ -46,6 +47,7 @@ class TestController extends Controller
                             ->first();
     
         $nextQuestionId = $nextQuestion ? $nextQuestion->question_number : null;
+        $correctAnswer= $currentQuestion->answer;
 
         if(!$currentQuestion) {
             return redirect()->back();
@@ -55,6 +57,7 @@ class TestController extends Controller
             'grade' => $grade,
             'test' => $currentQuestion,
             'nextQuestionId' => $nextQuestionId,
+            'correctAnswer' => $correctAnswer,
         ]);
 
     }

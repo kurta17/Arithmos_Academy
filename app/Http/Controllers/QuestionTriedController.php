@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\QuestionTried; // Fixed model import
+use App\Models\QuestionsTried; 
 
 class QuestionTriedController extends Controller
 {
+    
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -18,7 +19,7 @@ class QuestionTriedController extends Controller
             'question_number' => 'required|integer',
         ]);
 
-        QuestionTried::create($validatedData);
+        QuestionsTried::create($validatedData);
 
         return redirect()->back()->with('success', 'Data saved successfully!');
     }
@@ -30,16 +31,20 @@ class QuestionTriedController extends Controller
             'solved' => 'required|boolean',
         ]);
 
-        $questionTried = QuestionTried::findOrFail($id);
+        $questionTried = QuestionsTried::findOrFail($id);
         $questionTried->update($validatedData);
 
         return redirect()->back()->with('success', 'Data updated successfully!');
     }
 
+    
     public function show($id)
     {
-        $questionTried = QuestionTried::findOrFail($id); 
-
+        dd($id);
+        $questionTried = QuestionTried::where('user_id', $id)->get();   
+        
         return view('questiontried.show', compact('questionTried'));
     }
+    
+
 }

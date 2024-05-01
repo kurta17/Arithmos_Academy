@@ -15,7 +15,7 @@ Route::get('/test', [TestController::class, 'index'])->name('test');
 Route::post('/submit', [TestController::class, 'store'])->name('submit');
 
 Route::post('/questionstrieds', [QuestionTriedController::class, 'store'])->name('questionstrieds.store');
-Route::put('/questionstrieds/{id}', [QuestionTriedController::class, 'update'])->name('questionstrieds.update');
+Route::put('/questionstrieds/{id}', [QuestionsTriedController::class, 'update'])->name('questionstrieds.update');
 
 Route::get('/questionstrieds/{id}', [QuestionTriedController::class, 'show'])->name('questionstrieds.show');
 

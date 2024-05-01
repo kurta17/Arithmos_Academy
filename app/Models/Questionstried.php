@@ -4,17 +4,28 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Questionstried;
 
-class User extends Model
+class QuestionTried extends Model
 {
     use HasFactory;
 
-    /**
-     * Define a one-to-many relationship with the Questionstried model.
-     */
-    public function questionstrieds()
+    protected $fillable = [
+        'user_id',
+        'question_id',
+        'grade',
+        'question_number',
+        'initiated',
+        'solved',
+    ];
+
+    public function user()
     {
-        return $this->hasMany(Questionstried::class);
+        return $this->belongsTo(User::class);
+    }
+
+    public function question()
+    {
+        return $this->belongsTo(Question::class);
     }
 }
+

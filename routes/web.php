@@ -7,13 +7,17 @@ use App\Http\Controllers\GradeController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\WelcomeController;
-
+use App\Http\Controllers\QuestionTriedController;
 
 Route::get('/',[WelcomeController::class, 'show'])->name('welcome');    
 
 Route::get('/test', [TestController::class, 'index'])->name('test');
 Route::post('/submit', [TestController::class, 'store'])->name('submit');
 
+Route::post('/questionstrieds', [QuestionTriedController::class, 'store'])->name('questionstrieds.store');
+Route::put('/questionstrieds/{id}', [QuestionTriedController::class, 'update'])->name('questionstrieds.update');
+
+Route::get('/questionstrieds/{id}', [QuestionTriedController::class, 'show'])->name('questionstrieds.show');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard',[WelcomeController::class, 'dashboard'])->name('dashboard');

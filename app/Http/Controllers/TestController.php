@@ -47,7 +47,10 @@ class TestController extends Controller
                             ->first();
     
         $nextQuestionId = $nextQuestion ? $nextQuestion->question_number : null;
-        $correctAnswer= $currentQuestion->answer;
+        $correctAnswer = $currentQuestion->answer;
+        if (!$currentQuestion) {
+            return redirect()->back();
+        }
 
         if(!$currentQuestion) {
             return redirect()->back();
@@ -56,6 +59,7 @@ class TestController extends Controller
         return view('question', [
             'grade' => $grade,
             'test' => $currentQuestion,
+            'question_number' => $question_number,
             'nextQuestionId' => $nextQuestionId,
             'correctAnswer' => $correctAnswer,
         ]);

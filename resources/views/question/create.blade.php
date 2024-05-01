@@ -9,11 +9,11 @@
                 @csrf
                 <div class="mb-6">
                     <label for="title" class="block text-gray-700 font-bold mb-2">Title</label>
-                    <input type="text" class="form-input rounded-md shadow-sm w-full" id="title" name="title" value="{{ old('title') }}" required>
+                    <input type="text" class="form-input rounded-md text-black w-full" id="title" name="title" value="{{ old('title') }}" required>
                 </div>
                 <div class="mb-6">
                     <label for="description" class="block text-gray-700 font-bold mb-2">Description</label>
-                    <textarea class="form-textarea rounded-md shadow-sm w-full" id="description" name="description" rows="5" required>{{ old('description') }}</textarea>
+                    <textarea class="form-input rounded-md text-black w-full" id="description" name="description" rows="5" required>{{ old('description') }}</textarea>
                 </div>
                 <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
             </form>

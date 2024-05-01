@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css">
+    <style>
+        .correct-answer {
+            color: green;
+        }
+
+        .incorrect-answer {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <x-site-layout title='Questions'>
+ 
         <form id="question-form" method="POST" action="{{ route('submit') }}">
             @csrf
 
@@ -15,7 +26,7 @@
             </div>
 
             <div class="absolute top-10 right-10 m-10 flex">
-                <p class="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-5">Correct Answer: <span id="correct"> take argunet from javascript "counter"</span></p>
+                <p class="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-5">Correct Answers: <span id="counter"></span></p>
             </div>
 
             <div class='text-white p-1'>
@@ -26,7 +37,7 @@
                 <div class="grid grid-cols-2 gap-10 md:grid-cols-4 items-center w-50 h-30 p-10 mt-40">
                     @foreach ($test->options() as $option)
                         <label class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            <input type="radio" name="answer" value="{{ $option }}">
+                            <input type="radio" name="answer" value="{{ $option }}" id="{{ $option }}">
                             {{ $option }}
                         </label>
                     @endforeach
@@ -46,16 +57,31 @@
     </x-site-layout>
 
     <script>
-        // Initialize variables for correct answers and timer
-        let counter = 0;
+         
         let timeInSeconds = 0;
+        // let counter = 0 saved in local storage
+        let counter = localStorage.getItem('counter') ? parseInt(localStorage.getItem('counter')) : 0;
+        document.getElementById('counter').innerText = counter;
+
+        timeInSeconds = localStorage.getItem('time') ? parseInt(localStorage.getItem('time')) : 0;
+
         let timerInterval;
+        let correctAnswer = '{{ $correctAnswer }}'; 
+
+        console.log(correctAnswer);
+        console.log(counter);
+
 
         // Function to start the timer
         function startTimer() {
+
             timerInterval = setInterval(() => {
                 timeInSeconds++;
                 document.getElementById('time').innerText = formatTime(timeInSeconds);
+                // save the current time in the local storage
+                
+                // localstorage timer
+                localStorage.setItem('time', timeInSeconds);
             }, 1000);
         }
 
@@ -63,25 +89,28 @@
         function stopTimer() {
             clearInterval(timerInterval);
         }
-
-        // Function to format time in MM:SS format
         function formatTime(seconds) {
             const minutes = Math.floor(seconds / 60);
             const remainingSeconds = seconds % 60;
             return `${minutes < 10 ? '0' : ''}${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
         }
 
-        // Function to check the answer
-        function checkAnswer() {
+        function checkAnswer(correctAnswer) {
             const selectedAnswer = document.querySelector('input[name="answer"]:checked').value;
-            const correctAnswer = {{ $correctAnswer }};
 
             if (selectedAnswer === correctAnswer) {
+                alert('Correct!')
                 counter++;
-                document.getElementById('correct').innerText = counter;
+                // save the counter in the local storage
+                localStorage.setItem('counter', counter);
+                // update the counter display
+                document.getElementById('counter').innerText = counter;
+            } else {
+                // color change here
+                alert('Incorrect!')
+                // color the correct answer element red
             }
         }
-
 
         // Event listener for form submission
         document.getElementById('question-form').addEventListener('submit', function(event) {
@@ -91,10 +120,10 @@
             stopTimer();
             
             // Check the answer
-            checkAnswer();
+            checkAnswer(correctAnswer, counter);
 
-            // Submit the form
-            this.submit();
+            // Optionally, submit the form or navigate manually
+            //this.submit();
         });
 
         // Start the timer when the page loads

@@ -18,9 +18,9 @@
 <body>
     <x-site-layout title='Questions'>
  
-        <form id="question-form" method="POST" action="{{ route('submit') }}">
+        <form id="question-form" method="POST" action="{{ route('test', ['grade' => $grade, 'question_number' => $question_number]) }}">
             @csrf
-
+            
             <div class="absolute top-10 left-10 m-10 flex">
                 <p class="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-5">Time: <span id="time">00:00</span></p>
             </div>

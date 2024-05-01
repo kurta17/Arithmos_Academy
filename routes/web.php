@@ -12,6 +12,7 @@ use App\Http\Controllers\WelcomeController;
 Route::get('/',[WelcomeController::class, 'show'])->name('welcome');    
 
 Route::get('/test', [TestController::class, 'index'])->name('test');
+Route::post('/submit', [TestController::class, 'store'])->name('submit');
 
 
 Route::middleware(['auth', 'verified'])->group(function () {

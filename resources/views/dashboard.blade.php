@@ -1,6 +1,6 @@
 <x-site-layout title='Dashboard'>
   <div class="flex flex-wrap">
-    <!-- Left Section: Take a Test -->
+
     <div class="w-full md:w-1/3 p-4">
       <div class="bg-white rounded-lg shadow-md p-5">
         <h1 class="font-bold text-xl mb-3">Take a Test</h1>
@@ -9,7 +9,6 @@
       </div>
     </div>
 
-    <!-- Middle Section: Contact Me -->
     <div class="w-full md:w-1/3 p-4">
       <div class="bg-white rounded-lg shadow-md p-5">
         <h1 class="font-bold text-xl mb-3">Contact Me</h1>
@@ -18,7 +17,7 @@
       </div>
     </div>
 
-    <!-- Right Section: Create a Question -->
+
     <div class="w-full md:w-1/3 p-4">
       <div class="bg-white rounded-lg shadow-md p-5">
         <h1 class="font-bold text-xl mb-3">Create a Question</h1>

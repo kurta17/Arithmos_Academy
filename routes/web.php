@@ -6,21 +6,20 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GradeController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\QuestionController;
-
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\WelcomeController;
 
 
+Route::get('/',[WelcomeController::class, 'show'])->name('welcome');    
 
 Route::get('/test', [TestController::class, 'index'])->name('test');
 
-// Route::get('/question/{grade_id}/{number_id}', [TestController::class, 'show'])->name('question.show');
 
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard',[WelcomeController::class, 'dashboard'])->name('dashboard');
+    Route::post('/questions/store', [QuestionController::class, 'store'])->name('question.store');
+    Route::get('/question/create', [QuestionController::class, 'create'])->name('question.create');
+});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -29,20 +28,13 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::post('/submit', [TestController::class, 'store'])->name('submit');
-
 Route::post('/questions/store', [QuestionController::class, 'store'])->name('question.store');
 
-// Route to show the question creation form
 Route::get('/question/create', [QuestionController::class, 'create'])->name('question.create');
 
-// Route to handle the submission of the question creation form
-//Route::post('/questions', [TestController::class, 'store'])->name('questions.store');
 
-// Route to display the contact page
 Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
 
-// Route to handle form submission
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
 require __DIR__.'/auth.php';

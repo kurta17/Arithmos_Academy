@@ -63,22 +63,6 @@ class TestController extends Controller
     }
     
     
-        
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        // Find the test by ID
-        $test = Test::findOrFail($id);
-        
-        // Return the edit view with test data
-        return view('question.edit', compact('test'));
-    }
 
         
 

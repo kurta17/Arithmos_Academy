@@ -31,9 +31,5 @@ class QuestionsTried extends Model
         return $this->belongsTo(Test::class, 'question_id');
     }
 
-    public function question()
-    {
-        return $this->belongsTo(Question::class);
-    }
 }
 

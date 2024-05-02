@@ -10,6 +10,7 @@ class QuestionTriedController extends Controller
     
     public function store(Request $request)
     {
+        
         $validatedData = $request->validate([
             'user_id' => 'required|integer',
             'question_id' => 'required|integer',
@@ -18,24 +19,11 @@ class QuestionTriedController extends Controller
             'grade' => 'required|integer',
             'question_number' => 'required|integer',
         ]);
-
-        QuestionsTried::create($validatedData);
+        
+        $validatedData['user_id'] = Auth::id();
+        $QuestionsTried::create($validatedData);
 
         return redirect()->back()->with('success', 'Data saved successfully!');
-    }
-
-    public function update(Request $request, $id)
-    {
-        $validatedData = $request->validate([
-
-            'initiated' => 'required|boolean',
-            'solved' => 'required|boolean',
-        ]);
-
-        $questionTried = QuestionsTried::findOrFail($id);
-        $questionTried->update($validatedData);
-
-        return redirect()->back()->with('success', 'Data updated successfully!');
     }
 
     
@@ -43,7 +31,7 @@ class QuestionTriedController extends Controller
     {
         // dd($id);
         $questionTried = QuestionsTried::where('user_id', $id)->get();
-         
+        
         return view('questionstried.show', compact('questionTried'));
     }
     

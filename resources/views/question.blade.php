@@ -17,8 +17,9 @@
 </head>
 <body>
     <x-site-layout title='Questions'>
- 
-        <form id="question-form" method="POST" action="{{ route('test', ['grade' => $grade, 'question_number' => $question_number]) }}">
+
+        <form id="question-form" method="POST" action="{{ route('questionstrieds.store') }}">
+
             @csrf
             
             <div class="absolute top-10 left-10 m-10 flex">

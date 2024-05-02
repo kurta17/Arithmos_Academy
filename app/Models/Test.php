@@ -9,7 +9,7 @@ class Test extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'grade','question_number', 'options_a', 'options_b', 'options_c', 'options_d', 'answer'];
+    protected $fillable = ['question', 'grade','question_number', 'options_a', 'options_b', 'options_c', 'options_d', 'answer'];
     
 
     public function options()
@@ -20,6 +20,11 @@ class Test extends Model
             'c' => $this->options_c,
             'd' => $this->options_d,
         ];
+    }
+
+    public function questionsTried()
+    {
+        return $this->hasMany(QuestionsTried::class);
     }
 }
  

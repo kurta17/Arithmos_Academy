@@ -15,12 +15,13 @@ Route::get('/test', [TestController::class, 'index'])->name('test');
 Route::post('/submit', [TestController::class, 'store'])->name('submit');
 
 Route::post('/questionstrieds', [QuestionTriedController::class, 'store'])->name('questionstrieds.store');
-Route::put('/questionstrieds/{id}', [QuestionsTriedController::class, 'update'])->name('questionstrieds.update');
+Route::put('/questionstrieds/update/{id}', [QuestionsTriedController::class, 'update'])->name('questionstrieds.update');
 
 Route::get('/questionstrieds/{id}', [QuestionTriedController::class, 'show'])->name('questionstrieds.show');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard',[WelcomeController::class, 'dashboard'])->name('dashboard');
+
     Route::post('/questions/store', [QuestionController::class, 'store'])->name('question.store');
     Route::get('/question/create', [QuestionController::class, 'create'])->name('question.create');
 });
@@ -33,9 +34,6 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::post('/questions/store', [QuestionController::class, 'store'])->name('question.store');
-
-Route::get('/question/create', [QuestionController::class, 'create'])->name('question.create');
 
 
 Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');

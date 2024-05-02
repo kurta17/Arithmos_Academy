@@ -19,7 +19,8 @@ class QuestionTriedController extends Controller
             'grade' => 'required|integer',
             'question_number' => 'required|integer',
         ]);
-        
+
+
         $user = auth()->user();
         $validatedData['user_id'] = Auth::id();
         $QuestionsTried::create($validatedData);
@@ -30,7 +31,10 @@ class QuestionTriedController extends Controller
     
     public function show($id)
     {
-        // dd($id);
+        $user = auth()->user();
+        if(!$user){
+            return redirect()->route('login');
+        }       
         $questionTried = QuestionsTried::where('user_id', $id)->get();
         
         return view('questionstried.show', compact('questionTried'));

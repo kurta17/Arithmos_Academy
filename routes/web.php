@@ -28,7 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/questions/store', [QuestionController::class, 'store'])->name('question.store');
     Route::get('/question/create', [QuestionController::class, 'create'])->name('question.create');
     // see the user progress
-    Route::post('/questionstrieds', [QuestionTriedController::class, 'store'])->name('questionstrieds.store');
+    Route::post('/questionstrieds/update', [QuestionTriedController::class, 'store'])->name('questionstrieds.store');
     Route::get('/questionstrieds/{id}', [QuestionTriedController::class, 'show'])->name('questionstrieds.show');
 
 });

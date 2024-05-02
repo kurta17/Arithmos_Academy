@@ -19,7 +19,7 @@ class Navigation extends Component
             ['name' => 'Home', 'url' => '/'],
             ['name' => 'Test', 'url' => '/test'],
             ['name' => 'Contact', 'url' => '/contact'],
-            ['name' => 'solved', 'url' => '/questionstrieds/'.auth()->id()],
+            // ['name' => 'solved', 'url' => '/questionstrieds/'.auth()->id()],
         ];
     }
 

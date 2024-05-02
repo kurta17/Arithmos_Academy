@@ -27,6 +27,7 @@ class QuestionTriedController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
+
             'initiated' => 'required|boolean',
             'solved' => 'required|boolean',
         ]);
@@ -40,10 +41,10 @@ class QuestionTriedController extends Controller
     
     public function show($id)
     {
-        dd($id);
-        $questionTried = QuestionTried::where('user_id', $id)->get();   
-        
-        return view('questiontried.show', compact('questionTried'));
+        // dd($id);
+        $questionTried = QuestionsTried::where('user_id', $id)->get();
+         
+        return view('questionstried.show', compact('questionTried'));
     }
     
 

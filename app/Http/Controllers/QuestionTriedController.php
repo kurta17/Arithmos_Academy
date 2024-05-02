@@ -20,6 +20,7 @@ class QuestionTriedController extends Controller
             'question_number' => 'required|integer',
         ]);
         
+        $user = auth()->user();
         $validatedData['user_id'] = Auth::id();
         $QuestionsTried::create($validatedData);
 

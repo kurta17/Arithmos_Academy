@@ -19,7 +19,10 @@ Route::get('/contact', [ContactController::class, 'show'])->name('contact.show')
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
 
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/dashboard',[WelcomeController::class, 'dashboard'])->name('dashboard');
     // take question from user
     Route::post('/questions/store', [QuestionController::class, 'store'])->name('question.store');
@@ -27,13 +30,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // see the user progress
     Route::post('/questionstrieds', [QuestionTriedController::class, 'store'])->name('questionstrieds.store');
     Route::get('/questionstrieds/{id}', [QuestionTriedController::class, 'show'])->name('questionstrieds.show');
-});
-
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 });
 

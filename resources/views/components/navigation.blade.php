@@ -19,7 +19,6 @@
                     <div class="text-white flex flex-row justify-center gap-4">
                         @auth
                             <span class="py-1">{{ auth()->user()->name }}</span>
-
                             <a href="{{ route('dashboard') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Dashboard</a>
 
                             <form action="{{ route('logout') }}" method="post">
